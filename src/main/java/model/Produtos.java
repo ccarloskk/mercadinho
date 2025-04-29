@@ -38,6 +38,9 @@ public class Produtos {
         this.quant_produto = quant_produto;
     }
 
+    public void criar_produtos(){
+
+    }
 
 
 }
