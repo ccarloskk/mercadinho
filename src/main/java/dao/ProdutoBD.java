@@ -39,4 +39,21 @@ public class ProdutoBD {
             throw new RuntimeException(e);
         }
     }
+    public void AlterarDadosProduto(Produtos produtos){
+        String sql = "UPDATE produtos SET nome_produto = ?, valor_produto = ?, quant_produto = ? WHERE id_produto = ?";
+
+        try(Connection conn = ConexaoBD.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, produtos.getNome_produto());
+            stmt.setDouble(2, produtos.getValor_produto());
+            stmt.setInt(3,produtos.getQuant_produto());
+
+            System.out.println("Nome alterado!!");
+            stmt.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println("Erro ao alterar o nome do produto");
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -9,15 +9,16 @@ import java.sql.SQLException;
 public class test {
     public static void main(String[] args) {
         Produtos produtoTeste = new Produtos();
-        produtoTeste.setId_produto(4);
+        produtoTeste.setNome_produto("Arroz branco");
+        produtoTeste.setQuant_produto(40);
+        produtoTeste.setValor_produto(20);
+        produtoTeste.setId_produto(5);
 
         ProdutoBD produtoBD = new ProdutoBD();
 
         try {
-            produtoBD.ExcluirProduto(produtoTeste);
-            System.out.println("Produto excluido!");
+            produtoBD.AlterarDadosProduto(produtoTeste);
         } catch (Exception e) {
-            System.err.println("Erro ao excluir: " + e.getMessage());
             e.printStackTrace();
         }
     }
