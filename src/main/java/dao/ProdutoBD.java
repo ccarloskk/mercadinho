@@ -47,12 +47,10 @@ public class ProdutoBD {
             stmt.setString(1, produtos.getNome_produto());
             stmt.setDouble(2, produtos.getValor_produto());
             stmt.setInt(3,produtos.getQuant_produto());
-
-            System.out.println("Nome alterado!!");
+            stmt.setInt(4, produtos.getId_produto());
             stmt.executeUpdate();
 
         } catch (Exception e) {
-            System.out.println("Erro ao alterar o nome do produto");
             throw new RuntimeException(e);
         }
     }

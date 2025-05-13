@@ -10,10 +10,9 @@ public class test {
     public static void main(String[] args) {
         Produtos produtoTeste = new Produtos();
         produtoTeste.setNome_produto("Arroz branco");
-        produtoTeste.setQuant_produto(40);
+        produtoTeste.setQuant_produto(35);
         produtoTeste.setValor_produto(20);
         produtoTeste.setId_produto(5);
-
         ProdutoBD produtoBD = new ProdutoBD();
 
         try {
