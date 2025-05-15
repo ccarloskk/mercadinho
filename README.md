@@ -10,15 +10,30 @@ Bem-vindo ao repositório do **Sistema de Mercadinho**, um projeto simples para 
 - 📝 Edição e exclusão de produtos
 - 📊 Controle de estoque em tempo real
 - 💰 Registro de vendas
+---
+## 🛠️ Estrutura do Projeto
+
+```
+mercadinho/
+├── src/
+│   └── main/
+│       └── java/
+│           ├── dao/       # Camada de acesso a dados (DAO)
+│           ├── gui/       # Interface gráfica com o usuário (Swing)
+│           └── model/     # Classes de modelo (entidades do sistema)
+├── test/                  # Testes da aplicação
+├── target/                # Arquivos compilados (gerado pelo Maven)
+├── .gitignore             # Arquivos e pastas ignoradas pelo Git
+├── .properties            # Arquivo de configurações da aplicação
+├── pom.xml                # Gerenciador de dependências Maven
+└── README.md              # Documentação do projeto
+```
+
 
 ---
 📌 Status do Projeto
 - 🚧 Em desenvolvimento
-- 🆕 Futuras funcionalidades:
-
-Login de usuários
-
-Relatórios de compras 
+- 🆕 Futuras funcionalidades
 
 ## 🛠️ Tecnologias Utilizadas
 
