@@ -1,38 +1,24 @@
 package dao;
 
 import model.Produtos;
+import model.Vendas;
 import java.sql.*;
 
 public class VendasBD {
-    private DatabaseMetaData ConnectionFactory;
+    public void vendas_produtos(Vendas vendas){
+        String sql = "INSERT INTO compras (nome_produto, valor_produto, quant_produto, valor_compra) VALUES (?, ?, ?, ?)";
 
-    public void vendas_produtos(Produtos produto) throws SQLException {
+        try (Connection conn = ConexaoBD.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setString(1, vendas.getNome_produto());
+            stmt.setDouble(2, vendas.getValor_compra());
+            stmt.setInt(3, vendas.getQuant_produto());
+            stmt.setDouble(4, vendas.getValor_produto());
 
-        String sql = "INSERT INTO produto (id_compra, nome_produto, valor_produto, quant_produto, total_compra) VALUES (?, ?, ?, ?, ?)";
+            stmt.executeUpdate();
 
-        Connection conn = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-
-        try {
-            stmt.setInt(1,produto.getId_produto());
-            stmt.setString(2,produto.getNome_produto());
-            stmt.setDouble(3, produto.getValor_produto());
-            stmt.setInt(4, produto.getQuant_produto());
-
-            stmt.execute();
         } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                if (stmt !=  null){
-                    stmt.close();
-                }
-                if (conn != null){
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+            throw new RuntimeException(e);
         }
     }
 }

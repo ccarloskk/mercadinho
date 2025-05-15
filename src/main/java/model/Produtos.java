@@ -6,6 +6,12 @@ public class Produtos {
     private double valor_produto;
     private int quant_produto;
 
+    public void Produtos(String nome_produto, double valor_produto, int quant_produto){
+        this.nome_produto = nome_produto;
+        this.valor_produto = valor_produto;
+        this.quant_produto = quant_produto;
+    }
+
     public int getId_produto() {
         return id_produto;
     }
@@ -37,10 +43,4 @@ public class Produtos {
     public void setQuant_produto(int quant_produto) {
         this.quant_produto = quant_produto;
     }
-
-    public void criar_produtos(){
-
-    }
-
-
 }
