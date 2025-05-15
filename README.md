@@ -49,4 +49,4 @@ mercadinho/
 
 Desenvolvido com paixao a tecnolgia por **Carlos Henrique**  
 📧 [carloshsc000@email.com](mailto:carloshsc000@email.com)  
-🔗 [linkedin.com/in/carlos_henriqye](https://www.linkedin.com/in/carlos-henrique-197347199/)
+🔗 [linkedin.com/in/carlos_henrique](https://www.linkedin.com/in/carlos-henrique-197347199/)
