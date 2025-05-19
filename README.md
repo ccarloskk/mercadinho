@@ -1,6 +1,6 @@
 # 🛒 Sistema de Mercadinho
 
-Bem-vindo ao repositório do **Sistema de Mercadinho**, um projeto simples para controle de estoque e vendas, desenvolvido com **Java**, **Swing** e **MySQL** como parte de portfólio e aprendizado.
+Bem-vindo ao repositório do **Sistema de Mercadinho**, um projeto simples para vendas onlines, desenvolvido com **Java**, **Swing** e **MySQL** como parte de portfólio e aprendizado.
 
 ---
 
