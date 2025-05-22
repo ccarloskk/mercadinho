@@ -6,7 +6,8 @@ public class Produtos {
     private double valor_produto;
     private int quant_produto;
 
-    public void Produtos(String nome_produto, double valor_produto, int quant_produto){
+    public Produtos(int idProduto, String nome_produto, double valor_produto, int quant_produto){
+        this.id_produto = idProduto;
         this.nome_produto = nome_produto;
         this.valor_produto = valor_produto;
         this.quant_produto = quant_produto;
@@ -44,3 +45,5 @@ public class Produtos {
         this.quant_produto = quant_produto;
     }
 }
+
+

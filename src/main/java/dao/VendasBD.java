@@ -1,24 +1,31 @@
 package dao;
 
 import model.Produtos;
-import model.Vendas;
 import java.sql.*;
 
 public class VendasBD {
-    public void vendas_produtos(Vendas vendas){
-        String sql = "INSERT INTO compras (nome_produto, valor_produto, quant_produto, valor_compra) VALUES (?, ?, ?, ?)";
+    public static Produtos BuscarProduto(int produtoid){
+        String sql = "SELECT p.* FROM produtos p JOIN carrinho c ON p.id = c.produto_id WHERE c.id = ?";
 
         try (Connection conn = ConexaoBD.getConnection();
-        PreparedStatement stmt = conn.prepareStatement(sql)){
-            stmt.setString(1, vendas.getNome_produto());
-            stmt.setDouble(2, vendas.getValor_compra());
-            stmt.setInt(3, vendas.getQuant_produto());
-            stmt.setDouble(4, vendas.getValor_produto());
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, produtoid);
+            ResultSet rs = stmt.executeQuery();
 
             stmt.executeUpdate();
 
+            if (rs.next()) {
+                 return new Produtos(
+                        rs.getInt("id_produto"),
+                        rs.getString("nome_produto"),
+                        rs.getDouble("valor_produto"),
+                        rs.getInt("quant_produto")
+                );
+            }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return null;
     }
 }

@@ -1,47 +1,28 @@
 package model;
 
-public class Vendas{
-    private String nome_produto;
-    private double valor_produto;
-    private int quant_produto;
-    private double valor_compra;
+import dao.VendasBD;
 
-    public void Vendas (String nome_produto, double valor_produto, int quant_produto, double valor_compra){
-        this.nome_produto = nome_produto;
-        this.valor_produto = valor_produto;
-        this.quant_produto = quant_produto;
-        this.valor_compra = valor_compra;
-    }
+import java.util.ArrayList;
+import java.util.List;
 
-    public String getNome_produto() {
-        return nome_produto;
-    }
+public class Vendas {
+    private List<ItemCarrinho> itensCarrinho = new ArrayList<>();
 
-    public void setNome_produto(String nome_produto) {
-        this.nome_produto = nome_produto;
-    }
+    private static class ItemCarrinho {
+        private Produtos produto;
+        private int quantidade;
 
-    public double getValor_produto() {
-        return valor_produto;
-    }
+        public ItemCarrinho(Produtos produto, int quantidade) {
+            this.produto = produto;
+            this.quantidade = quantidade;
+        }
 
-    public void setValor_produto(double valor_produto) {
-        this.valor_produto = valor_produto;
-    }
+        public Produtos getProduto() {
+            return produto;
+        }
 
-    public int getQuant_produto() {
-        return quant_produto;
-    }
-
-    public void setQuant_produto(int quant_produto) {
-        this.quant_produto = quant_produto;
-    }
-
-    public double getValor_compra() {
-        return valor_compra;
-    }
-
-    public void setValor_compra(double valor_compra) {
-        this.valor_compra = valor_compra;
+        public int getQuantidade() {
+            return quantidade;
+        }
     }
 }

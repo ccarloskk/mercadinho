@@ -1,24 +1,11 @@
+import dao.VendasBD;
+import model.Vendas;
 
-import dao.ConexaoBD;
-import dao.ProdutoBD;
-import model.Produtos;
-
-import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class test {
     public static void main(String[] args) {
-        Produtos produtoTeste = new Produtos();
-        produtoTeste.setNome_produto("Arroz branco");
-        produtoTeste.setQuant_produto(35);
-        produtoTeste.setValor_produto(20);
-        produtoTeste.setId_produto(5);
-        ProdutoBD produtoBD = new ProdutoBD();
-
-        try {
-            produtoBD.AlterarDadosProduto(produtoTeste);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Vendas venda1 = new Vendas();
     }
 }
