@@ -44,6 +44,7 @@ public class Produtos {
     public void setQuant_produto(int quant_produto) {
         this.quant_produto = quant_produto;
     }
+
 }
 
 

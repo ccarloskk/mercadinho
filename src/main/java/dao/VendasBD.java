@@ -4,19 +4,21 @@ import model.Produtos;
 import java.sql.*;
 
 public class VendasBD {
-    public static Produtos BuscarProduto(int produtoid){
-        String sql = "SELECT p.* FROM produtos p JOIN carrinho c ON p.id = c.produto_id WHERE c.id = ?";
+    private final Connection connection;
 
-        try (Connection conn = ConexaoBD.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+    public VendasBD(Connection connection) {
+        this.connection = connection;
+    }
 
-            stmt.setInt(1, produtoid);
+    public Produtos buscarProduto(int id) {
+        String sql = "SELECT * FROM produtos WHERE id_produto = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
 
-            stmt.executeUpdate();
-
             if (rs.next()) {
-                 return new Produtos(
+                return new Produtos(
                         rs.getInt("id_produto"),
                         rs.getString("nome_produto"),
                         rs.getDouble("valor_produto"),
